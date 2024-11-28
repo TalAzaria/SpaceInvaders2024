@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        enemiesControl.SpawnEnemies(rows: 5, colums: 11, 
-            viewportStartPosition: new Vector2(0.05f, 0.95f));
+        enemiesControl.SpawnEnemies();
+        StartCoroutine(enemiesControl.MoveEnemies());
     }
 }

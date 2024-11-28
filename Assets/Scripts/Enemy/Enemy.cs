@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
+    public bool IsAlive { get; set; } = true;
     private SpriteRenderer spriteRenderer;
     public Bounds SpriteBounds { get { return spriteRenderer.bounds; } }
 
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sprite = sprites[spriteIndex];
     }
 
     public void ChangeSprite()
